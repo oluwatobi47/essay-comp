@@ -6,4 +6,16 @@ import { Injectable } from '@angular/core';
 export class TextComparisonService {
 
   constructor() { }
+
+  getComparisonHistory() {
+
+  }
+
+  findComparisonById(comparisonId: string) {
+
+  }
+
+
+
+
 }

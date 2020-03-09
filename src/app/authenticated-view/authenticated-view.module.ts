@@ -5,12 +5,15 @@ import { AuthenticatedViewRoutingModule } from './authenticated-view-routing.mod
 import { AuthenticatedViewComponent } from './authenticated-view.component';
 import { ComparisonHistoryComponent } from './comparison-history/comparison-history.component';
 import { TextComparisonComponent } from './text-comparison/text-comparison.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [AuthenticatedViewComponent, ComparisonHistoryComponent, TextComparisonComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     AuthenticatedViewRoutingModule
   ]
 })

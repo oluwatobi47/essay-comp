@@ -1,1 +1,52 @@
-<p>text-comparison works!</p>
+<div class="row margin-lr-0 ec-card">
+  <div class="col-12">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label class="control-label" for="fStudentName">First Student</label>
+            <input type="text" class="form-control" placeholder="Student Name" id="fStudentName" formControlName="fStudentName">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="file2">Upload File for First Student</label>
+            <input type="file" class="form-control-file" id="file1" accept=".txt" (change)="processUpload($event,1)">
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label class="control-label" for="sStudentName">Second Student</label>
+            <input type="text" class="form-control" placeholder="Student Name" id="sStudentName" formControlName="sStudentName">
+          </div>
+
+          <div class="form-group">
+            <label class="control-label" for="file2">Upload File for Second Student</label>
+            <input type="file" class="form-control-file" id="file2" accept=".txt" (change)="processUpload($event,2)">
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-12 d-flex align-items-center justify-content-center mt-3">
+    <button class="btn btn-primary" (click)="analyseData()">Compare</button>
+  </div>
+
+  <div class="col-12">
+    <div class="row" *ngIf="showResults">
+      <div class="col-12">
+        <h4>Results</h4>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <p class="content1">{{extactTextFromBase64(form?.get('fStudentFile64')?.value)}}</p>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <p class="content1">{{extactTextFromBase64(form?.get('sStudentFile64')?.value)}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

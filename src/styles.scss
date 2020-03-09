@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 .app-container {
-
+  background: #eeeff0;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  margin-top: 65px;
 }
 
 
@@ -56,4 +59,16 @@
 .ec-card {
   box-shadow: 5px 2px 20px -5px #e5e5e5;
   border-radius: 1rem;
+  background: #ffffff;
+  padding: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.7rem;
+  color: #f97300;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  color: #f97300;
 }

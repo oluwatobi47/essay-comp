@@ -1,0 +1,50 @@
+
+.app-navbar{
+  width: 100%;
+  background: #ffffff;
+  max-height: 65px;
+  z-index: 98;
+  padding: 1rem;
+  //padding: 3.0rem 2.5rem 2.5rem 7rem;
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .nav-item {
+    outline: none;
+    .nav-link {
+      border-radius: 1rem;
+      color: #f97300;
+      background: transparent !important;
+      font-size: 1.2rem;
+      &:hover {
+        background: #eeeff0 !important;
+      }
+    }
+  }
+}
+
+.nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;}
+
+.nav-link:hover{ background: #f4f4f4; color: #f97300; }
+
+.navbar-collapse{
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.navbar-toggler{  background:#fff !important;}
+
+.navbar-nav {
+  //justify-content: center;
+  align-items: center;
+  color: #ffffff;
+
+  @media only screen and (min-width: 768px) {
+    margin-right: 4rem !important;
+  }
+}

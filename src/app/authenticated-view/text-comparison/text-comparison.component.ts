@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {TextComparisonService} from "../../shared/services/text-comparison.service";
 
 @Component({
   selector: 'app-text-comparison',
@@ -9,8 +10,9 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class TextComparisonComponent implements OnInit {
 
   form: FormGroup;
+  showResults = false;
 
-  constructor() { }
+  constructor(private textComparisonService: TextComparisonService) { }
 
   ngOnInit() {
     this.initializeForm();
@@ -38,7 +40,34 @@ export class TextComparisonComponent implements OnInit {
   }
 
   analyseData() {
+    this.showResults = true;
+  }
 
+  extactTextFromBase64(base64String: string){
+    return atob(base64String);
+  }
+
+  extractBase64(uploadedFile) {
+    const toBase64 = file => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+    return toBase64(uploadedFile);
+  }
+
+  async processUpload(event, index) {
+    const file = event.target.files[0];
+    if(file) {
+      const base64 = await this.extractBase64(file);
+      if(base64 instanceof Error) {
+        console.error(base64);
+      } else {
+        const control = index == 1 ? 'fStudentFile64' : 'sStudentFile64';
+        this.form.get(control).setValue(base64.toString().split(',')[1]);
+      }
+    }
   }
 
 }
