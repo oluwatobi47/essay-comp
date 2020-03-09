@@ -12,4 +12,8 @@ export class AuthenticatedViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+
+  }
+
 }
