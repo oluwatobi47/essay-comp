@@ -11,7 +11,6 @@ export class Comparison {
   sStudentName: string;
   sStudentFile64: string;
   sStudentFileId: string;
-  result: number;
   similarity: number;
   comparisonDate: number;
 }
