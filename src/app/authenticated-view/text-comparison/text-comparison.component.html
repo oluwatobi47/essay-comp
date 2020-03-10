@@ -31,20 +31,28 @@
 
   <div class="col-12 d-flex align-items-center justify-content-center mt-3">
     <button class="btn btn-primary" (click)="analyseData()">Compare</button>
+    <button class="btn btn-dark" (click)="clearPage()">Clear</button>
   </div>
 
   <div class="col-12">
     <div class="row" *ngIf="showResults">
       <div class="col-12">
-        <h4>Results</h4>
+        <h5 class="section-title">Results</h5>
+        <h5>Text Similarity: <span>{{comparisonResult?.similarity}}%</span></h5>
       </div>
-      <div class="row">
+      <div class="col-12 d-flex flex-wrap" *ngIf="comparisonResult">
         <div class="col-12 col-md-6">
-          <p class="content1">{{extactTextFromBase64(form?.get('fStudentFile64')?.value)}}</p>
+          <label class="control-label">Student: {{form?.get('fStudentName')?.value}}</label>
+          <div class="result-container">
+            <p class="content1">{{extractTextFromBase64(form?.get('fStudentFile64')?.value)}}</p>
+          </div>
         </div>
 
         <div class="col-12 col-md-6">
-          <p class="content1">{{extactTextFromBase64(form?.get('sStudentFile64')?.value)}}</p>
+          <label class="control-label">Student: {{form?.get('sStudentName')?.value}}</label>
+          <div class="result-container">
+            <p class="content2">{{extractTextFromBase64(form?.get('sStudentFile64')?.value)}}</p>
+          </div>
         </div>
       </div>
     </div>
