@@ -25,7 +25,7 @@
     "@types/mark.js": "^8.11.5",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mark.js": "^8.11.1",
     "rxjs": "~6.4.0",
     "string-similarity": "^4.0.1",
